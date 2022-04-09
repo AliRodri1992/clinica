@@ -419,11 +419,11 @@ DEPENDENCIES
   rails (~> 6.1.5)
   rails-controller-testing
   rspec-rails (~> 5.0)
-  rubocop (~> 1.22)
+  rubocop
   rubocop-gitlab-security
-  rubocop-performance (~> 1.11)
-  rubocop-rails (~> 2.12)
-  rubocop-rspec (~> 2.5)
+  rubocop-performance
+  rubocop-rails
+  rubocop-rspec
   sass-rails
   selenium-webdriver (>= 4.0.0.rc1)
   shoulda-matchers (~> 5.0.0)

@@ -33,11 +33,11 @@ group :development, :test do
   gem 'faker', '~> 2.19'
   gem 'rails-controller-testing'
   gem 'rspec-rails', '~> 5.0'
-  gem 'rubocop', '~> 1.22', require: false
+  gem 'rubocop', require: false
   gem 'rubocop-gitlab-security'
-  gem 'rubocop-performance', '~> 1.11', require: false
-  gem 'rubocop-rails', '~> 2.12', require: false
-  gem 'rubocop-rspec', '~> 2.5', require: false
+  gem 'rubocop-performance', require: false
+  gem 'rubocop-rails', require: false
+  gem 'rubocop-rspec', require: false
 end
 
 group :development do
