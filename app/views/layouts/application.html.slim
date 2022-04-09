@@ -1,0 +1,32 @@
+doctype html
+html
+  head
+    meta charset="utf-8"
+    meta http-equiv="X-UA-Compatible" content="IE=edge"
+    meta name="viewport" content="width=device-width, initial-scale=1"
+    title Prueba Diagnostikare
+    = csrf_meta_tags
+    = csp_meta_tag
+    = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload'
+    // link rel="stylesheet" href="https://unpkg.com/bulma@0.9.0/css/bulma.min.css"
+    = javascript_pack_tag 'application', 'data-turbolinks-track': 'reload'
+  body
+    - if user_signed_in?
+      = yield
+    - else
+      section.hero.is-success.is-fullheight
+        .hero-body
+          .container.has-text-centered
+            .column.is-4.is-offset-4
+              h3.title.has-text-black Login
+              hr.login-hr
+              p.subtitle.has-text-black Please login to proceed
+              .box
+                figure.avatar
+                  svg class="bd-placeholder-img rounded" width="128" height="128" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 128x128" preserveAspectRatio="xMidYMid slice" focusable="false"
+                    title Placeholder
+                    circle cx="64" cy="64" fill="#868e96" r="64"
+                    text x="30%" y="50%" fill="#dee2e6" dy=".3em" 128x128
+                = yield
+              p.has-text-grey
+                a href="#" Sign Up
