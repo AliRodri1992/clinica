@@ -1,3 +1,18 @@
+# frozen_string_literal: true
+
+# Please do not make direct changes to this file!
+# This generator is maintained by the community around simple_form-bootstrap:
+# https://github.com/rafaelfranca/simple_form-bootstrap
+# All future development, tests, and organization should happen there.
+# Background history: https://github.com/heartcombo/simple_form/issues/1561
+
+# Uncomment this and change the path if necessary to include your own
+# components.
+# See https://github.com/heartcombo/simple_form#custom-components
+# to know more about custom components.
+# Dir[Rails.root.join('lib/components/**/*.rb')].each { |f| require f }
+
+# Use this setup block to configure all options available in SimpleForm.
 SimpleForm.setup do |config|
   # Default class for buttons
   config.button_class = 'button'
@@ -18,14 +33,15 @@ SimpleForm.setup do |config|
   # collection wrappers.
   config.include_default_input_wrapper_class = false
 
-  # Method used to tidy up errors. Specify any Rails Array method.
-  # :first lists the first message for each field.
-  # :to_sentence to list all errors for each field.
-  config.error_method = :to_sentence
+  # CSS class to add for error notification helper.
+  config.error_notification_class = 'notification is-danger'
+
+
+
 
   # add validation classes to `input_field`
-  config.input_field_error_class = 'is-danger'
-  config.input_field_valid_class = 'is-success'
+  config.input_field_error_class = "is-danger"
+  config.input_field_valid_class = "is-success"
 
 
   # vertical forms
@@ -39,8 +55,7 @@ SimpleForm.setup do |config|
     b.optional :min_max
     b.optional :readonly
     b.use :label
-    b.use :input, class: 'input', error_class: 'is-danger', valid_class: 'is-success'
-    b.use :full_error, wrap_with: { tag: 'div', class: 'help' }
-    b.use :hint, wrap_with: { tag: 'small', class: 'form-text text-muted' }
+    b.use :input, class: "input", wrap_with: { tag: "div", class: "control" }, error_class: "is-danger", valid_class: "is-success"
+    b.use :full_error, wrap_with: { tag: "div", class: "help is-danger" }
   end
 end
