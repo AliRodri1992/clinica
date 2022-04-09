@@ -15,10 +15,10 @@
 # Use this setup block to configure all options available in SimpleForm.
 SimpleForm.setup do |config|
   # Default class for buttons
-  config.button_class = 'button'
+  config.button_class = 'btn'
 
   # Define the default class of the input wrapper of the boolean input.
-  config.boolean_label_class = 'checkbox'
+  config.boolean_label_class = 'form-check-label'
 
   # How the label text should be generated altogether with the required text.
   config.label_text = lambda { |label, required, explicit_label| "#{label} #{required}" }
@@ -34,20 +34,20 @@ SimpleForm.setup do |config|
   config.include_default_input_wrapper_class = false
 
   # CSS class to add for error notification helper.
-  config.error_notification_class = 'notification is-danger'
+  config.error_notification_class = 'alert alert-danger'
 
   
   
 
   # add validation classes to `input_field`
-  config.input_field_error_class = "is-danger"
-  config.input_field_valid_class = "is-success"
+  config.input_field_error_class = 'is-invalid'
+  config.input_field_valid_class = 'is-valid'
 
 
   # vertical forms
   #
   # vertical default_wrapper
-  config.wrappers :vertical_form, tag: 'div', class: 'field', error_class: 'form-group-invalid', valid_class: 'form-group-valid' do |b|
+  config.wrappers :vertical_form, tag: 'div', class: 'form-group', error_class: 'form-group-invalid', valid_class: 'form-group-valid' do |b|
     b.use :html5
     b.use :placeholder
     b.optional :maxlength
@@ -56,7 +56,7 @@ SimpleForm.setup do |config|
     b.optional :min_max
     b.optional :readonly
     b.use :label
-    b.use :input, class: 'input', error_class: 'is-danger', valid_class: 'is-success'
+    b.use :input, class: 'form-control', error_class: 'is-invalid', valid_class: 'is-valid'
     b.use :full_error, wrap_with: { tag: 'div', class: 'invalid-feedback' }
     b.use :hint, wrap_with: { tag: 'small', class: 'form-text text-muted' }
   end
