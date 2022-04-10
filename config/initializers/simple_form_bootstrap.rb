@@ -36,10 +36,8 @@ SimpleForm.setup do |config|
   # CSS class to add for error notification helper.
   config.error_notification_class = 'alert alert-danger'
 
-  # Method used to tidy up errors. Specify any Rails Array method.
-  # :first lists the first message for each field.
-  # :to_sentence to list all errors for each field.
-  config.error_method = :to_sentence
+  
+  
 
   # add validation classes to `input_field`
   config.input_field_error_class = 'is-invalid'
