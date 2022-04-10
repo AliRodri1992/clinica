@@ -1,0 +1,27 @@
+nav.breadcrumb aria-label="breadcrumbs"
+  ul
+    - if controller?('home') && action?('index')
+      li.is-active
+        a href="javascript:void(0)"
+          span.icon.is-small
+            i.fas.fa-thumbs-up aria-hidden="true"
+          span Breadcrumb
+    - else
+      = link_to root_path do
+        span.icon.is-small
+          i.fas.fa-home aria-hidden="true"
+        span Home
+      - @breadcrumbs.each do |breadcrumb|
+        - if breadcrumb[:path].nil?
+          li.is-active
+            a href="javascript:void(0)"
+              span.icon.is-small
+                i.fas.fa-thumbs-up aria-hidden="true"
+              span = breadcrumb[:label]
+        - else
+          li
+            = link_to breadcrumb[:path] do
+              span.icon.is-small
+                i.fas.fa-puzzle-piece aria-hidden="true"
+              span Components
+
