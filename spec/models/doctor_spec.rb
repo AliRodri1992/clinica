@@ -2,13 +2,15 @@
 #
 # Table name: doctors
 #
-#  id         :bigint           not null, primary key
-#  deleted_at :datetime
-#  first_name :string
-#  last_name  :string
-#  slug       :string
-#  created_at :datetime         not null
-#  updated_at :datetime         not null
+#  id               :bigint           not null, primary key
+#  deleted_at       :datetime
+#  first_name       :string
+#  last_name        :string
+#  slug             :string
+#  specialization   :string
+#  total_experience :integer
+#  created_at       :datetime         not null
+#  updated_at       :datetime         not null
 #
 # Indexes
 #
