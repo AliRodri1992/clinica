@@ -12,5 +12,8 @@ Rails.start()
 Turbolinks.start()
 ActiveStorage.start()
 
-require("@vizuaalog/bulmajs")
+import Bulma from '@vizuaalog/bulmajs';
 import "@fortawesome/fontawesome-free/js/all"
+
+global.$ = global.Bulma = Bulma;
+window.$ = window.Bulma = Bulma;
