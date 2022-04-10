@@ -1,3 +1,5 @@
+= render 'shared/breadcrumbs'
+= render 'info_tiles'
 .columns
   .column.is-6
     .card.events-card
@@ -20,6 +22,11 @@
           = render 'my_appointments_history'
   .column.is-6
     .card.events-card
+      header.card-header
+        p.card-header-title Symptom Reports
+      .card-table
+        = render 'symptoms'
+      footer
 javascript:
     document.querySelectorAll("#nav-appointment li").forEach(function (navEl) {
         navEl.onclick = function () {
