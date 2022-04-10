@@ -1,2 +1,59 @@
-h1 Home#index
-p Find me in app/views/home/index.html.slim
+= render 'shared/breadcrumbs'
+= render 'info_tiles'
+.columns
+  .column.is-6
+    .card.events-card
+      #nav-appointment.tabs.is-toggle.is-fullwidth
+        ul
+          li.is-active data-target="pane-schedule" id="1"
+            a
+              span.icon.is-small
+                i.fas.fa-calendar-check aria-hidden="true"
+              span My Next Appointment
+          li data-target="pane-history" id="2"
+            a
+              span.icon.is-small
+                i.fas.fa-history aria-hidden="true"
+              span My Appointments History
+      .tab-content
+        .tab-pane.is-active#pane-schedule
+          = render 'schedule_appointmen'
+        .tab-pane#pane-history
+          = render 'my_appointments_history'
+  .column.is-6
+    .card.events-card
+      header.card-header
+        p.card-header-title Symptom Reports
+      .card-table
+        = render 'symptoms'
+      footer
+javascript:
+    document.querySelectorAll("#nav-appointment li").forEach(function (navEl) {
+        navEl.onclick = function () {
+            toggleTab(this.id, this.dataset.target);
+        }
+    });
+
+    function toggleTab(selectedNav, targetId) {
+        const navEls = document.querySelectorAll("#nav-appointment li");
+
+        navEls.forEach(function (navEl) {
+            if (navEl.id == selectedNav) {
+                navEl.classList.add("is-active");
+            } else {
+                if (navEl.classList.contains("is-active")) {
+                    navEl.classList.remove("is-active");
+                }
+            }
+        });
+
+        const tabs = document.querySelectorAll(".tab-pane");
+
+        tabs.forEach(function (tab) {
+            if (tab.id == targetId) {
+                tab.style.display = "block";
+            } else {
+                tab.style.display = "none";
+            }
+        });
+    }
