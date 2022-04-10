@@ -1,5 +1,9 @@
 = simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
   = f.input :email, placeholder: 'Email'
   = f.input :password, placeholder: 'Password'
-  = f.input :remember_me
+  .field
+    label.checkbox
+      = f.check_box :remember_me, class: 'checkbox'
+      | Remember me
+  label.checkbox
   = f.button :submit, 'Login', class: 'is-block is-info is-large is-fullwidth'

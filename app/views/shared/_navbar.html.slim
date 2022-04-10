@@ -1,0 +1,17 @@
+nav.navbar.is-white
+  .container
+    .navbar-brand
+      a.navbar-item.brand-text href="javascript:void(0)" Bulma Admin
+      .navbar-burger.burger data-target="navMenu"
+        span
+        span
+        span
+    .navbar-menu#navMenu
+      .navbar-start
+        = link_to 'Home', root_path, class: 'navbar-item'
+        = link_to 'Orders', root_path, class: 'navbar-item'
+        = link_to 'Payment', root_path, class: 'navbar-item'
+        = link_to 'Exceptions', root_path, class: 'navbar-item'
+        = link_to 'Reports', root_path, class: 'navbar-item'
+        = link_to 'Reports', root_path, class: 'navbar-item'
+        = link_to 'Logout', destroy_user_session_path, method: :delete, class: 'navbar-item'
