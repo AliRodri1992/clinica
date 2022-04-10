@@ -18,9 +18,7 @@ html
           .column.is-3
             = render 'shared/aside'
           .column.is-9
-            .columns
-              .column.is-12
-                = yield
+            = yield
   - else
     body.login
       section.hero.is-success.is-fullheight
